@@ -21,6 +21,11 @@ spec:
           image: nikhilkonduru06/devops-todo-app:4841596de05f6179ab69c2607f65c1582b38360d
           ports:
             - containerPort: 5000
+          env:
+            - name: REDIS_HOST
+              value: "redis-service"
+            - name: REDIS_PORT
+              value: "6379"
           resources:
             requests:
               cpu: "100m"
