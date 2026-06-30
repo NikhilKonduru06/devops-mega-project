@@ -18,7 +18,7 @@ spec:
       containers:
         - name: todo-app
           # This image tag gets updated automatically by the CI pipeline / ArgoCD
-          image: nikhilkonduru06/devops-todo-app:03f0edb9c862267957bf51886890a72312479f33
+          image: nikhilkonduru06/devops-todo-app:6db0ffbfdde5b1eca3ed2cbfefbc6a8988f5fe39
           ports:
             - containerPort: 5000
           env:
