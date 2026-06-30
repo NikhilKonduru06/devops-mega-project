@@ -1,0 +1,19 @@
+# Terraform
+terraform/.terraform/
+terraform/.terraform.lock.hcl
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+*.tfvars
+
+# SSH keys - never commit these
+project-key
+project-key.pub
+
+# Downloaded installers
+awscliv2.zip
+aws/
+kubectl
+
+# Python
+__pycache__/
+*.pyc
