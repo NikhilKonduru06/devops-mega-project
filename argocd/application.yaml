@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: devops-todo-app
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    # Replace with your actual GitHub repo URL
+    repoURL: https://github.com/<YOUR_GITHUB_USERNAME>/devops-mega-project.git
+    targetRevision: main
+    path: k8s
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: devops-project
+
+  syncPolicy:
+    automated:
+      prune: true       # Removes resources that are no longer in Git
+      selfHeal: true     # Reverts manual changes made directly on the cluster
+    syncOptions:
+      - CreateNamespace=true
